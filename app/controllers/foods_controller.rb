@@ -10,7 +10,7 @@ class FoodsController < ApplicationController
     @foods = @search.result.page(params[:page]).per(PER)
 
     if user_signed_in? then 
-      @user_id = current_user.id
+      @user_id = current_user
     else
       @user_id = current_user
     end

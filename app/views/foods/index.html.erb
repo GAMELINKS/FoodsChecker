@@ -28,9 +28,9 @@
 </thead>
 
 <tbody>
+<% if food.user_id = @user_id %>
   <% @foods.each do |food| %>
     <tr>
-    <% if food.user_id = @user_id %>
       <td><%= food.name %></td>
       <td><%= food.date %></td>
       <td><%= food.food %></td>
@@ -39,8 +39,8 @@
       <td><%= link_to 'Show', food %></td>
       <td><%= link_to 'Edit', edit_food_path(food) %></td>
       <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
     </tr>
+  <% end %>
   <% end %>
 </tbody>
 </table>

@@ -37,6 +37,12 @@ gem 'kaminari', '~> 0.17.0'
 
 gem 'ransack'
 
+gem 'devise'
+
+gem 'mastodon-api', require: 'mastodon'
+gem 'omniauth-mastodon'
+gem 'omniauth'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

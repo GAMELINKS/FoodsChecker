@@ -1,5 +1,9 @@
+<% if user_signed_in? %>
 <h1>New Food</h1>
 
 <%= render 'form', food: @food %>
 
 <%= link_to 'Back', foods_path %>
+<% else %>
+  <p><%= link_to "Mastodonアカウントでログイン", user_mastodon_omniauth_authorize_path %></p>
+<% end %>

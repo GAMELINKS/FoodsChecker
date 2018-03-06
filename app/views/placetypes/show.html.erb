@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -7,3 +8,6 @@
 
 <%= link_to 'Edit', edit_placetype_path(@placetype) %> |
 <%= link_to 'Back', placetypes_path %>
+<% else %>
+  <p><%= link_to "Mastodonアカウントでログイン", user_mastodon_omniauth_authorize_path %></p>
+<% end %>

@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <p id="notice"><%= notice %></p>
 
 <h1>Placetypes</h1>
@@ -27,3 +28,6 @@
 <br>
 
 <%= link_to 'New Placetype', new_placetype_path %>
+<% else %>
+  <p><%= link_to "Mastodonアカウントでログイン", user_mastodon_omniauth_authorize_path %></p>
+<% end %>

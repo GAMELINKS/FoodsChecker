@@ -1,5 +1,9 @@
+<% if user_signed_in? %>
 <h1>New Placetype</h1>
 
 <%= render 'form', placetype: @placetype %>
 
 <%= link_to 'Back', placetypes_path %>
+<% else %>
+  <p><%= link_to "Mastodonアカウントでログイン", user_mastodon_omniauth_authorize_path %></p>
+<% end %>

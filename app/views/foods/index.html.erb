@@ -28,7 +28,7 @@
 </thead>
 
 <tbody>
-<% if food.user_id = @user_id %>
+<% if @foods.user_id = @user_id %>
   <% @foods.each do |food| %>
     <tr>
       <td><%= food.name %></td>

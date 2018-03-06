@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :food %>
-    <%= form.collection_select(:food, Foodtype.all, :name, :name, include_blank: true) %>
+    <%= form.where(user_id: current_user.id).collection_select(:food, Foodtype.all, :name, :name, include_blank: true) %>
   </div>
 
   <div class="field">

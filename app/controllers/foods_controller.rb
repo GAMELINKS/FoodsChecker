@@ -8,10 +8,6 @@ class FoodsController < ApplicationController
   def index
     @search = Food.search(params[:q])
     @foods = @search.result.page(params[:page]).per(PER)
-
-    if user_signed_in? then 
-      @foods = @foods.find(params[:user_id => current_user.id])
-    end
   end
   
   # GET /foods/1

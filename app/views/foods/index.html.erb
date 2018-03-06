@@ -30,7 +30,7 @@
 <tbody>
   <% @foods.each do |food| %>
     <tr>
-    <% if food.user_id = current_user.id %>
+    <% if food.user_id = @user_id %>
       <td><%= food.name %></td>
       <td><%= food.date %></td>
       <td><%= food.food %></td>

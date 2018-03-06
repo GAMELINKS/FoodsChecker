@@ -8,7 +8,7 @@ class FoodsController < ApplicationController
   def index
     @search = Food.search(params[:q])
     @foods = @search.result.page(params[:page]).per(PER)
-    @foods = @foods.find_all_by_user_id(current_user.id)
+    @foods = @foods.find(:all, :conditions => { :user_id => current_user.id })
 
     if user_signed_in? then 
       @user_id = current_user.id

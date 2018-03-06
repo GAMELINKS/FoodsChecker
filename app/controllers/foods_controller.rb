@@ -6,9 +6,8 @@ class FoodsController < ApplicationController
   # GET /foods
   # GET /foods.json
   def index
-    @search = Food.search(params[:q])
+    @search = Food.find(params[:user_id => current_user.id]).search(params[:q])
     @foods = @search.result.page(params[:page]).per(PER)
-    @foods = @foods.find(:all, :conditions => { :user_id => current_user.id })
 
     if user_signed_in? then 
       @user_id = current_user.id
@@ -79,6 +78,6 @@ class FoodsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def food_params
-      params.require(:food).permit(:name, :date, :food, :place, :picture)
+      params.require(:food).permit(:name, :date, :food, :place, :picture, :user_id)
     end
 end

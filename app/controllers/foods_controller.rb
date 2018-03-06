@@ -6,7 +6,7 @@ class FoodsController < ApplicationController
   # GET /foods
   # GET /foods.json
   def index
-    @search = Food.search(params[:q])
+    @search = Food.where(user_id: current_user.id)search(params[:q])
     @foods = @search.result.page(params[:page]).per(PER)
   end
   

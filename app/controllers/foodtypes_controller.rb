@@ -27,7 +27,7 @@ class FoodtypesController < ApplicationController
   # POST /foodtypes.json
   def create
     @foodtype = Foodtype.new(foodtype_params)
-
+    @foodtype.user = current_user
     respond_to do |format|
       if @foodtype.save
         format.html { redirect_to @foodtype, notice: 'Foodtype was successfully created.' }

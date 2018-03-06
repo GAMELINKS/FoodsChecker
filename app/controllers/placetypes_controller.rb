@@ -27,7 +27,7 @@ class PlacetypesController < ApplicationController
   # POST /placetypes.json
   def create
     @placetype = Placetype.new(placetype_params)
-
+    @placetype.user = current_user
     respond_to do |format|
       if @placetype.save
         format.html { redirect_to @placetype, notice: 'Placetype was successfully created.' }

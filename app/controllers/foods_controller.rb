@@ -34,7 +34,7 @@ class FoodsController < ApplicationController
   # POST /foods.json
   def create
     @food = Food.new(food_params)
-    @food.user = current_user
+    @food.user_id = current_user.id
     respond_to do |format|
       if @food.save
         format.html { redirect_to @food, notice: 'Food was successfully created.' }
@@ -78,6 +78,6 @@ class FoodsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def food_params
-      params.require(:food).permit(:name, :date, :food, :place, :picture)
+      params.require(:food).permit(:name, :date, :food, :place, :picture, :user_id)
     end
 end

@@ -8,11 +8,11 @@ class FoodsController < ApplicationController
   def index
     @search = Food.search(params[:q])
     @foods = @search.result.page(params[:page]).per(PER)
-    
+
     if user_signed_in? then 
       @user_id = current_user.id
     else
-      @user = current_user
+      @user_id = current_user
     end
   end
   

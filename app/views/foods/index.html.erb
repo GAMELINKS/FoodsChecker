@@ -6,9 +6,9 @@
     <%= f.label :name_cont, "Name" %>
     <%= f.text_field :name_cont, class: "form-control" %>
     <%= f.label :name_cont, "Foodtype" %>
-    <%= f.collection_select(:food_eq, Foodtype.all, :name, :name, include_blank: true, class: "form-control") %>
+    <%= f.collection_select(:food_eq, Foodtype.where(user_id: current_user.id).all, :name, :name, include_blank: true, class: "form-control") %>
     <%= f.label :name_cont, "Placetype" %>
-    <%= f.collection_select(:place_eq, Placetype.all, :name, :name, include_blank: true, class: "form-control") %>
+    <%= f.collection_select(:place_eq, Placetype.where(user_id: current_user.id).all, :name, :name, include_blank: true, class: "form-control") %>
   </div>
   <div class="actions"><%= f.submit "Search" %></div>
 <% end %>

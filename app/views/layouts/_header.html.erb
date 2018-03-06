@@ -17,10 +17,8 @@
         <li><%= link_to "保管場所", placetypes_path %></li>
         <li><%= link_to "ソースコード", "https://github.com/S-H-GAMELINKS/FoodsChecker" %></li>
         <% if user_signed_in? %>
-          <li><%= link_to "ダッシュボード", dashboard_path %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-        <% end %>
-        <% if !user_signed_in? %>
+        <% else %>
           <li><%= link_to "Mastodonアカウントでログイン", user_mastodon_omniauth_authorize_path %></li>
         <% end %>
         </ul>

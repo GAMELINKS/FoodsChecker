@@ -6,7 +6,7 @@ class PlacetypesController < ApplicationController
   # GET /placetypes
   # GET /placetypes.json
   def index
-    @placetypes = Placetype.page(params[:page]).per(PER)
+    @placetypes = Placetype.where(user_id: current_user.id).page(params[:page]).per(PER)
   end
 
   # GET /placetypes/1

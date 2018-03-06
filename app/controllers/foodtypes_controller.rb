@@ -6,7 +6,7 @@ class FoodtypesController < ApplicationController
   # GET /foodtypes
   # GET /foodtypes.json
   def index
-    @foodtypes = Foodtype.page(params[:page]).per(PER)
+    @foodtypes = Foodtype.where(user_id: current_user.id).page(params[:page]).per(PER)
   end
 
   # GET /foodtypes/1

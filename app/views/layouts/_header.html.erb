@@ -19,7 +19,8 @@
         <% if user_signed_in? %>
           <li><%= link_to "ダッシュボード", dashboard_path %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-        <% else %>
+        <% end %>
+        <% if !user_signed_in? %>
           <li><%= link_to "Mastodonアカウントでログイン", user_mastodon_omniauth_authorize_path %></li>
         <% end %>
         </ul>

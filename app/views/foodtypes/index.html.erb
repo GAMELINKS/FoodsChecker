@@ -15,9 +15,9 @@
     <% @foodtypes.each do |foodtype| %>
       <tr>
         <td><%= foodtype.name %></td>
-        <td><%= link_to 'Show', foodtype %></td>
-        <td><%= link_to 'Edit', edit_foodtype_path(foodtype) %></td>
-        <td><%= link_to 'Destroy', foodtype, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', foodtype %></td>
+        <td><%= link_to '編集', edit_foodtype_path(foodtype) %></td>
+        <td><%= link_to '破棄', foodtype, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -27,7 +27,7 @@
 
 <br>
 
-<%= link_to 'New Foodtype', new_foodtype_path %>
+<%= link_to '新しい食材を登録', new_foodtype_path %>
 <% else %>
   <p><%= link_to "Mastodonアカウントでログイン", user_mastodon_omniauth_authorize_path %></p>
 <% end %>

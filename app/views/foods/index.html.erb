@@ -1,17 +1,7 @@
 <% if user_signed_in? %>
 <p id="notice"><%= notice %></p>
 
-<%= search_form_for @search do |f| %>
-  <div class="form-group">
-    <%= f.label :name_cont, "Name" %>
-    <%= f.text_field :name_cont, class: "form-control" %>
-    <%= f.label :name_cont, "Foodtype" %>
-    <%= f.collection_select(:food_eq, Foodtype.where(user_id: current_user.id).all, :name, :name, include_blank: true, class: "form-control") %>
-    <%= f.label :name_cont, "Placetype" %>
-    <%= f.collection_select(:place_eq, Placetype.where(user_id: current_user.id).all, :name, :name, include_blank: true, class: "form-control") %>
-  </div>
-  <div class="actions"><%= f.submit "Search" %></div>
-<% end %>
+<%= render 'search_form' %>
 
 <h1>Foods</h1>
 

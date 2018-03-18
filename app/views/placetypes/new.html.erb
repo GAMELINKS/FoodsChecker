@@ -3,7 +3,7 @@
 
 <%= render 'form', placetype: @placetype %>
 
-<%= link_to 'Back', placetypes_path %>
+<%= link_to '戻る', placetypes_path %>
 <% else %>
   <p><%= link_to "Mastodonアカウントでログイン", user_mastodon_omniauth_authorize_path %></p>
 <% end %>

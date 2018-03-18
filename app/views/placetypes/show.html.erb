@@ -2,12 +2,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>保管場所名:</strong>
   <%= @placetype.name %>
 </p>
 
-<%= link_to 'Edit', edit_placetype_path(@placetype) %> |
-<%= link_to 'Back', placetypes_path %>
+<%= link_to '編集', edit_placetype_path(@placetype) %> |
+<%= link_to '戻る', placetypes_path %>
 <% else %>
   <p><%= link_to "Mastodonアカウントでログイン", user_mastodon_omniauth_authorize_path %></p>
 <% end %>

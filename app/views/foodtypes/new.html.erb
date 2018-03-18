@@ -3,7 +3,7 @@
 
 <%= render 'form', foodtype: @foodtype %>
 
-<%= link_to 'Back', foodtypes_path %>
+<%= link_to '戻る', foodtypes_path %>
 <% else %>
   <p><%= link_to "Mastodonアカウントでログイン", user_mastodon_omniauth_authorize_path %></p>
 <% end %>

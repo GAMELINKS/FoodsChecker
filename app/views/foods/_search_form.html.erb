@@ -1,10 +1,10 @@
 <%= search_form_for @search do |f| %>
     <div class="form-group">
-      <%= f.label :name_cont, "Name" %>
+      <%= f.label :name_cont, "食品名" %>
       <%= f.text_field :name_cont, class: "form-control" %>
-      <%= f.label :name_cont, "Foodtype" %>
+      <%= f.label :name_cont, "食品群類" %>
       <%= f.collection_select(:food_eq, Foodtype.where(user_id: current_user.id).all, :name, :name, include_blank: true, class: "form-control") %>
-      <%= f.label :name_cont, "Placetype" %>
+      <%= f.label :name_cont, "保管場所" %>
       <%= f.collection_select(:place_eq, Placetype.where(user_id: current_user.id).all, :name, :name, include_blank: true, class: "form-control") %>
     </div>
     <div class="actions"><%= f.submit "Search" %></div>

@@ -12,27 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :食材名 %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :date %>
+    <%= form.label :賞味期限 or 消費期限 %>
     <%= form.date_select :date %>
   </div>
 
   <div class="field">
-    <%= form.label :food %>
+    <%= form.label :食品群類 %>
     <%= form.collection_select(:food, Foodtype.where(user_id: current_user.id).all, :name, :name, include_blank: true) %>
   </div>
 
   <div class="field">
-    <%= form.label :place %>
+    <%= form.label :保管場所 %>
     <%= form.collection_select(:place, Placetype.where(user_id: current_user.id).all, :name, :name, include_blank: true) %>
   </div>
 
   <div class="field">
-    <%= form.label :picture %>
+    <%= form.label :食材の画像 %>
     <%= form.file_field :picture, id: :picture %>
   </div>
 

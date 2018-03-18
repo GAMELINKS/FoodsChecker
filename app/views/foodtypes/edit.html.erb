@@ -1,10 +1,10 @@
 <% if user_signed_in? %>
-<h1>Editing Foodtype</h1>
+<h1>食品群類名の編集</h1>
 
 <%= render 'form', foodtype: @foodtype %>
 
-<%= link_to 'Show', @foodtype %> |
-<%= link_to 'Back', foodtypes_path %>
+<%= link_to '詳細', @foodtype %> |
+<%= link_to '戻る', foodtypes_path %>
 <% else %>
   <p><%= link_to "Mastodonアカウントでログイン", user_mastodon_omniauth_authorize_path %></p>
 <% end %>

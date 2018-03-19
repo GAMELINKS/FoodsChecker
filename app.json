@@ -1,0 +1,22 @@
+{
+  "name": "FoodsChecker",
+  "description": "食品管理アプリです。",
+  "keywords": [
+    "productivity",
+    "HTML5",
+    "scalpel"
+  ],
+  "repository": "https://github.com/GAMELINKS/FoodsChecker.for.Mastodon",
+
+  "env": {
+    "BASIC_AUTH_USER": "",
+    "AWS_ACCESS_KEY": "",
+    "AWS_SECRET_KEY": "",
+    "AWS_REGION_NAME": "",
+    "AWS_STORAGE_NAME": "",
+    "AWS_STORAGE_PATH": "",
+    "DEVISE_SECRET_KEY": "",
+    "ACCESS_KEY": "",
+    "SECRET_KEY": ""
+  }
+}

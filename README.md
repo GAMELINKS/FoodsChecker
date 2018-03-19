@@ -41,6 +41,12 @@ Ruby 2.3.3
 
 Ruby on Rails 5.1.5
 
+# デプロイ
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+上記のボタンからHerokuへとデプロイできます。
+
 # 本番環境
 
 Herokuへデプロイして運用しています。

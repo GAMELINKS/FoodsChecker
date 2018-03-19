@@ -25,7 +25,7 @@ class CounttypesController < ApplicationController
   # POST /counttypes.json
   def create
     @counttype = Counttype.new(counttype_params)
-
+    @counttype.user = current_user
     respond_to do |format|
       if @counttype.save
         format.html { redirect_to @counttype, notice: 'Counttype was successfully created.' }

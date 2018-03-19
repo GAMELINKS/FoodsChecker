@@ -25,7 +25,7 @@ class CountsController < ApplicationController
   # POST /counts.json
   def create
     @count = Count.new(count_params)
-
+    @count.user = current_user
     respond_to do |format|
       if @count.save
         format.html { redirect_to @count, notice: 'Count was successfully created.' }

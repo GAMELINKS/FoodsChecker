@@ -32,6 +32,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :count %>
+    <%= form.collection_select(:count, Count.all, :count, :count, include_blank: true) %><%= form.collection_select(:counttype, Counttype.where(user_id: current_user.id).all, :counttype, :counttype, include_blank: true) %>
+  </div>
+
+  <div class="field">
     <%= form.label :食材の画像 %>
     <%= form.file_field :picture, id: :picture %>
   </div>

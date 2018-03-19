@@ -6,7 +6,7 @@ class CounttypesController < ApplicationController
   # GET /counttypes
   # GET /counttypes.json
   def index
-    @counttypes = Foodtype.where(user_id: current_user.id).page(params[:page]).per(PER)
+    @counttypes = Counttype.where(user_id: current_user.id).page(params[:page]).per(PER)
   end
 
   # GET /counttypes/1

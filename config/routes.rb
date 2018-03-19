@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :counttypes
+  resources :counts
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :foods
   resources :foodtypes

@@ -1,6 +1,8 @@
 class CounttypesController < ApplicationController
   before_action :set_counttype, only: [:show, :edit, :update, :destroy]
 
+  PER = 10
+
   # GET /counttypes
   # GET /counttypes.json
   def index

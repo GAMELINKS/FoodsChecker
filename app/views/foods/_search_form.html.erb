@@ -6,6 +6,8 @@
       <%= f.collection_select(:food_eq, Foodtype.where(user_id: current_user.id).all, :name, :name, include_blank: true, class: "form-control") %>
       <%= f.label :name_cont, "保管場所" %>
       <%= f.collection_select(:place_eq, Placetype.where(user_id: current_user.id).all, :name, :name, include_blank: true, class: "form-control") %>
+      <p><%= sort_link(@search, :date, "賞味期限で並べ替え") %></p>
+      <p><%= sort_link(@search, :count, "数量で並び替え") %></p>
     </div>
     <div class="actions"><%= f.submit "Search" %></div>
 <% end %>

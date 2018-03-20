@@ -9,7 +9,16 @@ task :expired => :environment do
     @foods = Food.find(Food.ids)
 
     @foods.each do |food|
-        user = User.find(food.user_id)
-        user.email
+        if food.date == Date.today then
+            user = User.find(food.user_id)
+            user.email
+        end
     end
+end
+
+task :test_toot =>environment do
+
+    client = Mastodon::REST::Client.new(base_url: ENV["MASTODON_URL"], bearer_token: ENV["MASTODON_ACCESS_TOKEN"])
+    message = ("test toot")
+    response = client.create_status(message)
 end

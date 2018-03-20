@@ -18,7 +18,7 @@ end
 
 task :test_toot => :environment do
 
-    user = User.find(1).email
+    user = User.find(1)
 
     client = Mastodon::REST::Client.new(base_url: ENV["MASTODON_URL"], bearer_token: ENV["ACCESS_TOKEN"])
     message = ("@#{user.email}賞味期限が近い食品がありますよ！ https://foods-checker.herokuapp.com/ #FoodsChecker ")

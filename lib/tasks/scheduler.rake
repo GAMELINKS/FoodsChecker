@@ -8,7 +8,8 @@ task :expired => :environment do
 
     @foods = Food.find(Food.ids)
 
-    @foods.each |food| do
-        puts User.find(food.user_id)
+    @foods.each do |food|
+        user = User.find(food.user_id)
+        user.email
     end
 end

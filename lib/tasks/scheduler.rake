@@ -7,6 +7,6 @@ end
 task :expired => :environment do
 
     for i in 1..Food.ids.max do
-        pus i
+        puts i
     end
 end

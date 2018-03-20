@@ -16,7 +16,7 @@ task :expired => :environment do
     end
 end
 
-task :test_toot =>environment do
+task :test_toot => :environment do
 
     client = Mastodon::REST::Client.new(base_url: ENV["MASTODON_URL"], bearer_token: ENV["ACCESS_TOKEN"])
     message = ("test toot for FoodsChecker")

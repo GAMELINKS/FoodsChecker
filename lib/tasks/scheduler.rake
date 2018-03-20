@@ -19,6 +19,6 @@ end
 task :test_toot =>environment do
 
     client = Mastodon::REST::Client.new(base_url: ENV["MASTODON_URL"], bearer_token: ENV["ACCESS_TOKEN"])
-    message = ("test toot")
+    message = ("test toot for FoodsChecker")
     response = client.create_status(message)
 end

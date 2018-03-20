@@ -6,11 +6,9 @@ end
 
 task :expired => :environment do
 
-    for i in 1..Food.ids.max do
-        if Food.find(i) != nil then
-            if Food.find(i).date > Date.today.prev_day(3) then
-                puts User.find(Food.find(i).user_id)
-            end
-        end
+    @foods = Food.find(Food.ids)
+
+    @foods.each |food| do
+        puts User.find(food.user_id)
     end
 end

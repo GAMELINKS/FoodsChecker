@@ -13,7 +13,7 @@ task :expired => :environment do
             user = User.find(food.user_id)
             
             client = Mastodon::REST::Client.new(base_url: ENV["MASTODON_URL"], bearer_token: ENV["ACCESS_TOKEN"])
-            message = ("@#{user.email}賞味期限が近い食品#{food.name}がありますよ！ https://foods-checker.herokuapp.com/ #FoodsChecker ")
+            message = ("@#{user.email}賞味期限が近い食品:#{food.name}がありますよ！ #{food.picture} https://foods-checker.herokuapp.com/ #FoodsChecker ")
             response = client.create_status(message)
         end
     end

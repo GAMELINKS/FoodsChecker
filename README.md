@@ -34,6 +34,11 @@ Railsの解説が非常にわかりやすく書かれている初心者にもオ
 
 ユーザーIDと他なモデルデータとの連携などに際して参考になりました。
 
+[Mastodon API gemを使って投稿する](https://qiita.com/takahashim/items/a8c0eb3a75d366cfe87b)
+[A ruby interface for the Mastodon API](https://github.com/tootsuite/mastodon-api)
+[heroku schedulerの使い方　herokuで簡単な処理を定期的に自動的に実行する](https://qiita.com/Hijiri-K/items/d436d10d0e1ba6c573c0)
+
+Mastodonへの賞味期限通知Toot実装にあたって参考にさせていただきました。
 
 # 開発環境
 

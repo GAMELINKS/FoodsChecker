@@ -10,7 +10,7 @@ class Food < ApplicationRecord
     
           food = new
           food.attributes = row.to_hash.slice(*updatable_attributes)
-          food.user_id = current_user
+          food.user_id = current_user.id
           food.save!
         end
     end

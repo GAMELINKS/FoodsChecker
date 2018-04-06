@@ -5,6 +5,13 @@
 
 <%= render 'foods_index' %>
 
+<br><br>
+
+<%= form_tag({controller: "foods", action: "import", method: "post"}, {multipart: true}) do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "食品を一括インポート" %>
+<% end %>
+
 <% else %>
   <p><%= link_to "Mastodonアカウントでログイン", user_mastodon_omniauth_authorize_path %></p>
 <% end %>

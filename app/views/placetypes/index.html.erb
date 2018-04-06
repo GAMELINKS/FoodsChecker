@@ -28,6 +28,14 @@
 <br>
 
 <%= link_to '新しい保管場所を登録', new_placetype_path %>
+
+<br>
+
+<%= form_tag({controller: "placetypes", action: "import", method: "post"}, {multipart: true}) do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "保管場所を一括インポート" %>
+<% end %>
+
 <% else %>
   <p><%= link_to "Mastodonアカウントでログイン", user_mastodon_omniauth_authorize_path %></p>
 <% end %>

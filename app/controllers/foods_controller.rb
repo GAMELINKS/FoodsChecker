@@ -70,7 +70,7 @@ class FoodsController < ApplicationController
   end
 
   def import
-    Food.import(params[:file])
+    Food.import(params[:file, :current_user.id])
     redirect_to root_path
   end
 

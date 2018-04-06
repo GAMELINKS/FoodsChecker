@@ -2,7 +2,7 @@ class Food < ApplicationRecord
     belongs_to :user, :optional => true
     mount_uploader :picture, PictureUploader
 
-    def self.import(file)
+    def self.import(file, current_user)
 
         require 'csv'
 
@@ -10,7 +10,7 @@ class Food < ApplicationRecord
     
           food = new
           food.attributes = row.to_hash.slice(*updatable_attributes)
-          food.user_id = current_user.id
+          food.user_id = current_user
           food.save!
         end
     end

@@ -9,7 +9,7 @@ class Placetype < ApplicationRecord
     
           placetype = new
           placetype.attributes = row.to_hash.slice(*updatable_attributes)
-    
+          placetype.user_id = current_user.id
           placetype.save!
         end
     end

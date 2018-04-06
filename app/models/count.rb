@@ -7,7 +7,7 @@ class Count < ApplicationRecord
     
           count = new
           count.attributes = row.to_hash.slice(*updatable_attributes)
-    
+          count.user_id = current_user.id
           count.save!
         end
     end

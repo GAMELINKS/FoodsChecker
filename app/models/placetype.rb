@@ -1,7 +1,7 @@
 class Placetype < ApplicationRecord
     belongs_to :user, :optional => true
 
-    def self.import(file)
+    def self.import(file, current_user)
 
         require 'csv'
 

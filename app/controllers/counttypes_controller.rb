@@ -64,7 +64,7 @@ class CounttypesController < ApplicationController
   end
 
   def import
-    Counttype.import(params[:file])
+    Counttype.import(params[:file], current_user)
     redirect_to root_path
   end
 

@@ -62,7 +62,7 @@ class CountsController < ApplicationController
   end
 
   def import
-    Count.import(params[:file])
+    Count.import(params[:file], current_user)
     redirect_to root_path
   end
 

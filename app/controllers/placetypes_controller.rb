@@ -64,7 +64,7 @@ class PlacetypesController < ApplicationController
   end
 
   def import
-    Placetype.import(params[:file])
+    Placetype.import(params[:file], current_user)
     redirect_to root_path
   end
 

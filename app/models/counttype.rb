@@ -1,5 +1,5 @@
 class Counttype < ApplicationRecord
-    def self.import(file)
+    def self.import(file, current_user)
 
         require 'csv'
 

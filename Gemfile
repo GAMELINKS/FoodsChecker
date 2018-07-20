@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'carrierwave'
-gem 'fog'
+gem 'fog-aws'
 gem 'dotenv-rails'
 gem 'kaminari', '~> 0.17.0'
 
